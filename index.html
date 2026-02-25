@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Prompts en Español · Domina la IA en tu idioma</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Poppins:wght@400;600;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos (gratuito) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== RESET Y VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== COLORES ===== */
+        :root {
+            --primary: #E84C3D;      /* rojo español */
+            --primary-dark: #C0392B;
+            --secondary: #F1C40F;     /* amarillo */
+            --bg: #F8FAFC;
+            --text-dark: #0F172A;
+            --text-soft: #334155;
+            --card-bg: #FFFFFF;
+            --border-light: #E2E8F0;
+            --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ===== BOTONES ===== */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 16px -6px rgba(232, 76, 61, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px rgba(232, 76, 61, 0.5);
+        }
+
+        .btn-small {
+            padding: 10px 24px;
+            font-size: 1rem;
+        }
+
+        .link-muestra {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .link-muestra:hover {
+            border-bottom-color: var(--primary);
+        }
+
+        /* ===== HEADER / NAV ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-soft);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 0 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1 1 200px;
+            text-align: center;
+        }
+
+        .hero-image i {
+            font-size: 180px;
+            color: var(--primary);
+            opacity: 0.9;
+            background: rgba(232, 76, 61, 0.05);
+            padding: 20px;
+            border-radius: 40px;
+        }
+
+        .hero-content {
+            flex: 2 1 400px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: var(--text-soft);
+            margin-bottom: 32px;
+            max-width: 550px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: white;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            box-shadow: var(--shadow);
+        }
+
+        /* ===== SECCIÓN LOGOS / CONFIANZA ===== */
+        .trust-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            margin: 20px 0;
+        }
+
+        .trust-icons i {
+            font-size: 2rem;
+            margin: 0 12px;
+            color: #94A3B8;
+        }
+
+        .trust-stats {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-soft);
+        }
+
+        /* ===== PROBLEMA / SOLUCIÓN ===== */
+        .problema-solucion {
+            display: flex;
+            gap: 40px;
+            padding: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .col {
+            flex: 1 1 280px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .col h3 {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+        }
+
+        .col ul {
+            list-style: none;
+        }
+
+        .col li {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .col.sins li i {
+            color: #E84C3D;
+        }
+
+        .col.con li i {
+            color: #2ECC71;
+        }
+
+        /* ===== CATEGORÍAS ===== */
+        .categorias {
+            padding: 60px 0;
+        }
+
+        .categorias h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 48px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 24px;
+        }
+
+        .card-cat {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: 0.2s;
+        }
+
+        .card-cat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+        }
+
+        .card-cat i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .card-cat h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .card-cat p {
+            color: var(--text-soft);
+            font-weight: 600;
+        }
+
+        /* ===== EJEMPLOS ===== */
+        .ejemplos {
+            background-color: white;
+            padding: 60px 0;
+            border-radius: 40px;
+            margin: 40px 0;
+        }
+
+        .ejemplos h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .ejemplo-item {
+            background: var(--bg);
+            padding: 24px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .btn-center {
+            text-align: center;
+            margin: 32px 0 0;
+        }
+
+        /* ===== PARA QUIÉN ===== */
+        .para-quien {
+            padding: 60px 0;
+        }
+
+        .para-quien h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 48px;
+        }
+
+        .grid-personas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+        }
+
+        .persona {
+            text-align: center;
+        }
+
+        .persona i {
+            font-size: 3rem;
+            background: rgba(232, 76, 61, 0.1);
+            padding: 20px;
+            border-radius: 60px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .persona p {
+            font-weight: 600;
+        }
+
+        /* ===== TESTIMONIOS ===== */
+        .testimonios {
+            background: white;
+            padding: 60px 0;
+            border-radius: 40px;
+        }
+
+        .grid-testimonios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonio-card {
+            background: var(--bg);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonio-card i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .testimonio-card p {
+            font-style: italic;
+            margin: 16px 0;
+        }
+
+        .autor {
+            font-weight: 700;
+        }
+
+        .estrellas {
+            color: var(--secondary);
+            margin-top: 8px;
+        }
+
+        /* ===== PRECIO ===== */
+        .precio {
+            padding: 60px 0;
+        }
+
+        .card-precio {
+            max-width: 450px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 40px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary);
+        }
+
+        .precio-valor {
+            font-size: 3.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .precio-pequeno {
+            color: var(--text-soft);
+            margin-bottom: 24px;
+        }
+
+        .checklist {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist i {
+            color: #2ECC71;
+        }
+
+        .pago-seguro {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--text-soft);
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            background: white;
+            padding: 60px;
+            border-radius: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-light);
+            padding: 20px 0;
+        }
+
+        .faq-pregunta {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0F172A;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .social i {
+            font-size: 1.8rem;
+            margin: 0 10px;
+            color: #94A3B8;
+            transition: 0.2s;
+        }
+
+        .social i:hover {
+            color: var(--primary);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .trust-bar {
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo">50Prompts<span>.es</span></div>
+            <div class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Categorías</a>
+                <a href="#">FAQ</a>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-image">
+                <i class="fas fa-flag fa-10x"></i> 
+                <!-- ícono de bandera + robot opcional, puedes cambiarlo -->
+            </div>
+            <div class="hero-content">
+                <h1>50 PROMPTS <br>EN ESPAÑOL</h1>
+                <p>La herramienta que necesitas para dominar la IA en tu idioma. Ahorra horas con prompts probados.</p>
+                <a href="#" class="btn">COMPRAR AHORA — 499₽</a>
+                <div>
+                    <a href="#" class="link-muestra">Ver 3 ejemplos gratis →</a>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge">ChatGPT</span>
+                    <span class="badge">Midjourney</span>
+                    <span class="badge">Claude</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST BAR -->
+        <div class="trust-bar">
+            <div class="trust-icons">
+                <i class="fab fa-facebook-messenger"></i> 
+                <i class="fas fa-robot"></i>
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="trust-stats">
+                <div class="stat-item"><span class="stat-number">500+</span> <span class="stat-label">clientes</span></div>
+                <div class="stat-item"><span class="stat-number">4.8</span> <span class="stat-label">★ estrellas</span></div>
+                <div class="stat-item"><span class="stat-number">50</span> <span class="stat-label">prompts</span></div>
+                <div class="stat-item"><span class="stat-number">15min</span> <span class="stat-label">ahorro/día</span></div>
+            </div>
+        </div>
+
+        <!-- PROBLEMA / SOLUCIÓN -->
+        <section class="problema-solucion">
+            <div class="col sins">
+                <h3>❌ Sin este producto</h3>
+                <ul>
+                    <li><i class="fas fa-times-circle"></i> Pierdes tiempo creando prompts desde cero</li>
+                    <li><i class="fas fa-times-circle"></i> Resultados inconsistentes</li>
+                    <li><i class="fas fa-times-circle"></i> El idioma limita tu creatividad</li>
+                </ul>
+            </div>
+            <div class="col con">
+                <h3>✅ Con este producto</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Prompts listos para usar</li>
+                    <li><i class="fas fa-check-circle"></i> Optimizados en español</li>
+                    <li><i class="fas fa-check-circle"></i> Abre oportunidades laborales</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CATEGORÍAS -->
+        <section class="categorias">
+            <h2>📚 50 prompts organizados por categorías</h2>
+            <div class="grid-cards">
+                <div class="card-cat"><i class="fas fa-graduation-cap"></i><h3>Educación</h3><p>10 prompts</p></div>
+                <div class="card-cat"><i class="fas fa-briefcase"></i><h3>Trabajo</h3><p>10 prompts</p></div>
+                <div class="card-cat"><i class="fas fa-pen-fancy"></i><h3>Creatividad</h3><p>10 prompts</p></div>
+                <div class="card-cat"><i class="fas fa-home"></i><h3>Vida diaria</h3><p>10 prompts</p></div>
+                <div class="card-cat"><i class="fas fa-plane"></i><h3>Viajes</h3><p>10 prompts</p></div>
+                <div class="card-cat"><i class="fas fa-gift"></i><h3>Bonus</h3><p>Plantilla</p></div>
+            </div>
+        </section>
+
+        <!-- EJEMPLOS GRATIS -->
+        <section class="ejemplos">
+            <h2>👀 Prueba antes de comprar</h2>
+            <div class="ejemplo-item">
+                <strong>Prompt #1:</strong> "Actúa como profesor de español para extranjeros. Explica la diferencia entre 'por qué' y 'porque' con ejemplos cotidianos…"
+            </div>
+            <div class="ejemplo-item">
+                <strong>Prompt #2:</strong> "Actúa como guionista de TikTok. Crea un guión de 45 segundos sobre los beneficios de aprender español en 2026…"
+            </div>
+            <div class="btn-center">
+                <a href="#" class="btn btn-small">VER LOS 3 EJEMPLOS GRATIS</a>
+            </div>
+        </section>
+
+        <!-- PARA QUIÉN -->
+        <section class="para-quien">
+            <h2>🎯 ¿Para quién es este producto?</h2>
+            <div class="grid-personas">
+                <div class="persona"><i class="fas fa-laptop-code"></i><p>Profesionales que usan IA</p></div>
+                <div class="persona"><i class="fas fa-user-graduate"></i><p>Estudiantes</p></div>
+                <div class="persona"><i class="fas fa-route"></i><p>Viajeros frecuentes</p></div>
+                <div class="persona"><i class="fas fa-video"></i><p>Creadores de contenido</p></div>
+                <div class="persona"><i class="fas fa-chalkboard-teacher"></i><p>Profesores de idiomas</p></div>
+                <div class="persona"><i class="fas fa-user-astronaut"></i><p>Personas curiosas</p></div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS -->
+        <section class="testimonios">
+            <h2 style="text-align:center;">⭐ Lo que dicen nuestros clientes</h2>
+            <div class="grid-testimonios">
+                <div class="testimonio-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Estos prompts me ahorran horas cada semana. Los uso para mis clases de español y funcionan perfectamente."</p>
+                    <div class="autor">— María, profesora</div>
+                    <div class="estrellas">★★★★★</div>
+                </div>
+                <div class="testimonio-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"La plantilla bonus vale sola el precio. Ahora creo mis propios prompts sin esfuerzo."</p>
+                    <div class="autor">— Carlos, marketer</div>
+                    <div class="estrellas">★★★★★</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRECIO / CARD -->
+        <section class="precio">
+            <div class="card-precio">
+                <h3>🚀 PACK COMPLETO</h3>
+                <div class="precio-valor">499₽</div>
+                <div class="precio-pequeno">≈ $5 USD · pago único</div>
+                <ul class="checklist">
+                    <li><i class="fas fa-check-circle"></i> 50 prompts en español</li>
+                    <li><i class="fas fa-check-circle"></i> 5 categorías prácticas</li>
+                    <li><i class="fas fa-check-circle"></i> Plantilla bonus</li>
+                    <li><i class="fas fa-check-circle"></i> PDF + Google Docs</li>
+                    <li><i class="fas fa-check-circle"></i> Actualizaciones gratis</li>
+                </ul>
+                <a href="#" class="btn">COMPRAR AHORA</a>
+                <div class="pago-seguro">🔒 Pago por Telegram Donation · recibe link al instante</div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <h2 style="text-align:center; margin-bottom:40px;">❓ Preguntas frecuentes</h2>
+            <div class="faq-item">
+                <div class="faq-pregunta">📬 ¿Cómo recibiré el producto?</div>
+                <p>Después del pago, te envío el enlace a Google Drive por mensaje directo de Telegram.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-pregunta">🔍 ¿Puedo probar antes de comprar?</div>
+                <p>¡Sí! Descarga 3 ejemplos gratis <a href="#" style="color: var(--primary);">aquí</a>.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-pregunta">📄 ¿En qué formato viene?</div>
+                <p>PDF listo para usar + enlace a Google Docs editable.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-pregunta">💸 ¿Hay reembolsos?</div>
+                <p>Sí, 7 días de garantía: si no te gusta, te devolvemos el dinero.</p>
+            </div>
+        </section>
+
+    </div> <!-- fin container -->
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">50Prompts<span>.es</span></div>
+            <div class="social">
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div>© 2026 · Creado con ❤️ para hispanohablantes curiosos</div>
+        </div>
+    </footer>
+</body>
+</html>
